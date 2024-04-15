@@ -7,9 +7,11 @@ import Loader from "../../components/Loader/Loader";
 
 const noImage = "https://critics.io/img/movies/poster-placeholder.png";
 
-const MovieCast = lazy(() => import("../../components/MovieCast/MovieCast"));
+const MovieCast = lazy(() =>
+  import("../../components/MovieCast/MovieCast.jsx")
+);
 const MovieReviews = lazy(() =>
-  import("../../components/MovieReviews/MovieReviews")
+  import("../../components/MovieReviews/MovieReviews.jsx")
 );
 
 const MovieDetailsPage = () => {
@@ -34,7 +36,6 @@ const MovieDetailsPage = () => {
     };
     getDetails();
   }, [movieId]);
-  console.log(movieById);
   return (
     <div>
       {isLoading && <Loader />}
@@ -73,9 +74,13 @@ const MovieDetailsPage = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+      <div className={css["cast-container"]}>
+        <Link className={css["cast-link"]} to="cast">
+          Cast
+        </Link>
+        <Link className={css["cast-link"]} to="reviews">
+          Reviews
+        </Link>
       </div>
       <Suspense fallback={<Loader />}>
         <Routes>
