@@ -1,0 +1,22 @@
+.details-img {
+  padding: 20px;
+  max-width: 400px;
+}
+
+.movie-container {
+  display: flex;
+}
+
+.movie-description {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.movie-title {
+  margin-bottom: 10px;
+}
+
+.goback-btn {
+  text-decoration: none;
+  padding: 0 20px 0 20px;
+}

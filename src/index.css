@@ -24,3 +24,8 @@ img {
   display: block;
   max-width: 100%;
 }
+
+a.active {
+  color: #fff;
+  background-color: #3fa0ff;
+}

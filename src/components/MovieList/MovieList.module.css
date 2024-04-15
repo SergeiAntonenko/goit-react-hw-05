@@ -1,0 +1,20 @@
+.list-li {
+  width: calc((100% - 45px) / 4);
+}
+
+.list-title {
+  background-color: #8989ff;
+
+  text-align: center;
+}
+
+.list-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out;
+}
+
+.list-item:hover {
+  transform: scale(1.06);
+}
