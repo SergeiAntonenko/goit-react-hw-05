@@ -1,0 +1,10 @@
+.header-nav-btn {
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.header-nav-btn:hover {
+  background-color: #3fa0ff;
+}
