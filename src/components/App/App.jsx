@@ -12,6 +12,12 @@ const MovieDetailsPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import("../../pages/NotFoundPage/NotFoundPage.jsx")
 );
+const MovieCast = lazy(() =>
+  import("../../components/MovieCast/MovieCast.jsx")
+);
+const MovieReviews = lazy(() =>
+  import("../../components/MovieReviews/MovieReviews.jsx")
+);
 
 const App = () => {
   return (
@@ -20,7 +26,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movie/:movieId/*" element={<MovieDetailsPage />}></Route>
+        <Route path="/movie/:movieId/" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

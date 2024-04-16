@@ -1,18 +1,11 @@
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
-import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { lazy, useEffect, useRef, useState } from "react";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 
 import getMovieDetails from "../../api/getMovieDetails";
 import css from "./MovieDetailsPage.module.css";
 import Loader from "../../components/Loader/Loader";
 
 const noImage = "https://critics.io/img/movies/poster-placeholder.png";
-
-const MovieCast = lazy(() =>
-  import("../../components/MovieCast/MovieCast.jsx")
-);
-const MovieReviews = lazy(() =>
-  import("../../components/MovieReviews/MovieReviews.jsx")
-);
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -82,12 +75,7 @@ const MovieDetailsPage = () => {
           Reviews
         </Link>
       </div>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="cast" element={<MovieCast />} />
-          <Route path="reviews" element={<MovieReviews />} />
-        </Routes>
-      </Suspense>
+      <Outlet />
     </div>
   );
 };
